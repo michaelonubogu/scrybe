@@ -1,0 +1,86 @@
+<!-- ===================================================================================================
+    Name:          scrybe-card
+    Description:   The scrybe card is used to display content items within the container area of a
+                    scrybe backboard. The types of content will fall under books, scrybes, friends & authors
+    ====================================================================================================-->
+<link rel="import" href="../../components/polymer/polymer.html">
+
+<!-- Polymer Core Components -->
+<link rel="import" href="../../components/core-icon-button/core-icon-button.html">
+
+<link rel="import" href="../../components/core-icons/core-icons.html">
+<link rel="import" href="../../components/core-icons/av-icons.html">
+<link rel="import" href="../../components/core-icons/communication-icons.html">
+<link rel="import" href="../../components/core-icons/device-icons.html">
+<link rel="import" href="../../components/core-icons/editor-icons.html">
+<link rel="import" href="../../components/core-icons/hardware-icons.html">
+<link rel="import" href="../../components/core-icons/image-icons.html">
+<link rel="import" href="../../components/core-icons/maps-icons.html">
+<link rel="import" href="../../components/core-icons/notification-icons.html">
+<link rel="import" href="../../components/core-icons/social-icons.html">
+
+<!-- Polymer Paper Components -->
+<link rel="import" href="../../components/paper-ripple/paper-ripple.html">
+<link rel="import" href="../../components/paper-item/paper-item.html">
+
+<polymer-element name="scrybe-card">
+    <template>
+        <style>
+            :host{
+            }
+
+            .chip {
+                display: inline-block;
+                position: relative;
+                margin: 4px;
+                overflow: hidden;
+                text-align: start;
+                background-color: #fff;
+                box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.45);
+                border-radius:3px;
+                padding:3px;
+            }
+
+            .chip-top {
+                width: 200px;
+                height: 200px;
+                border-radius:5px;
+            }
+
+            .chip-bottom {
+                padding: 8px;
+                line-height: 1.5;
+            }
+
+            .chip-album-title {
+                font-weight: bold;
+            }
+
+            .card{
+                position: relative;
+                display: inline-block;
+                width: 300px;
+                height: 240px;
+                vertical-align: top;
+                background-color: #fff;
+                box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+            }
+        </style>
+
+        <div class="chip" hero-id="Tycho-Fragments">
+            <div class="chip-top" style="-webkit-transform-origin: 0px 0px 0px; border-radius: 0px; background: rgb(244, 219, 51);" hero-id="Tycho-Fragments-art"></div>
+            <div class="chip-bottom">
+                <div class="chip-album-title">Fragments</div>
+                <div class="chip-artist">Tycho</div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        Polymer('scrybe-card', {
+            ready: function(){
+
+            }
+        });
+    </script>
+</polymer-element>

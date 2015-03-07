@@ -1,0 +1,49 @@
+<!-- ===================================================================================================
+    Name:          scrybe-backboard
+    Description:   The scrybe backboard is used to provide the content area with a backboard/background
+                    whenever the page transitions.
+    ====================================================================================================-->
+<link rel="import" href="../../components/polymer/polymer.html">
+
+<polymer-element name="scrybe-backboard">
+    <template>
+        <style>
+            :host{
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                height: 350px !important;
+                background: #70c26f; /*default.*/
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+            .chip-container{
+                position: absolute;
+                top: 275px;
+                right: 0;
+                left: 0;
+                text-align: center;
+            }
+        </style>
+
+        <div class="chip-container">
+            <content select=".container"></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer('scrybe-backboard', {
+            ready: function(){
+                var element = document.querySelector('scrybe-backboard');
+                var img = element.getElementsByTagName('img')[0];
+                var img_src = img.src;
+                var url = 'url(' + img_src + ')';
+                element.style.background = url;
+            }
+        });
+    </script>
+</polymer-element>

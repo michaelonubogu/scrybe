@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrybe - Prototype</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Web Components Polyfils -->
+    <script src="components/webcomponentsjs/webcomponents.js"></script>
+
+    <!-- App Settings Import -->
+    <link rel="import" href="imports/app-main/main.html">
+    <link rel="import" href="imports/scrybe-backboard/scrybe-backboard.html">
+    <link rel="import" href="imports/scrybe-card/scrybe-card.html">
+    <link rel="import" href="imports/scrybe-nav-bar/scrybe-nav-bar.html">
+
+    <style>
+        html,body {
+            height: 100%;
+            margin: 0;
+            background-color: #dcedc8;
+            font-family: 'Grand Hotel', sans-serif;
+        }
+        core-header-panel {
+            height: 100%;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        core-toolbar {
+            background: #8bc34a;
+            color: white;
+            /*border-bottom: solid 4px #4CAF50;*/
+        }
+
+        core-icon-button{
+            margin-top: -10px !important;
+        }
+
+        core-menu{
+            margin:0 !important;
+        }
+
+        core-item{
+            padding: 30px 10px 30px 25px;
+            color:#ffffff;
+            /*background:linear-gradient(#11512D, #1D5435);*/
+            background:#1D5435;
+            border-bottom: ridge 1px #124B2B;
+        }
+
+        core-item.core-selected{
+            font-weight:normal;
+        }
+
+        paper-item{
+            padding: 30px 10px 30px 25px;
+            color:#ffffff;
+            /*background:linear-gradient(#11512D, #1D5435);*/
+            background:#1D5435;
+            border-bottom: ridge 1px #124B2B;
+        }
+
+        #side-nav{
+            background:#1D5435;
+        }
+
+        #side-nav core-toolbar{
+            background: #134A2A;
+            border-bottom: ridge 1px #143F27;
+        }
+
+        #side-nav core-menu{
+            background:#1D5435;
+        }
+
+        .container {
+            width: 100% !important;
+            padding-left: 50px;
+        }
+
+        :unresolved {
+            display: flex;
+            justify-content: center;
+            background: rgba(255,255,255,0.5);
+            border: 1px dashed #ccc;
+            border-radius: 5px;
+        }
+        :unresolved:after {
+            padding: 15px;
+            content: 'loading...';
+            color: #ccc;
+        }
+
+        @media (min-width: 481px) {
+            #tabs {
+                width: 200px;
+            }
+            .container {
+                width: 400px;
+                padding-left:70px;
+            }
+        }
+    </style>
+
+</head>
+
+<body unresolved fullbleed>
+    <!-- Scafolding Area -->
+    <core-drawer-panel id="drawer" rightDrawer forceNarrow>
+        <scrybe-nav-bar drawer></scrybe-nav-bar>
+
+        <core-header-panel id="content-section" mode="standard" main>
+            <core-toolbar>
+                <span flex>Scrybe</span>
+                <core-icon-button icon="menu" core-drawer-toggle id="side-nav-toggle"></core-icon-button>
+            </core-toolbar>
+
+            <div layout fit>
+                <core-animated-pages  selected="0" transitions="slide-from-right">
+                    <section>
+                        <scrybe-backboard>
+                            <img src="assets/img/backboard-home.jpg">
+                            <div class="container" layout horizontal wrap>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                                <scrybe-card></scrybe-card>
+                            </div>
+                        </scrybe-backboard>
+                    </section>
+                    <section layout vertical center-center>
+                        <div>page</div>
+                    </section>
+                </core-animated-pages>
+            </div>
+        </core-header-panel>
+
+    </core-drawer-panel>
+
+    <script>
+        document.addEventListener('polymer-ready', function() {
+        });
+    </script>
+</body>
+
+</html>
